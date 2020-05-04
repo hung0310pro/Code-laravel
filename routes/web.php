@@ -56,8 +56,6 @@ Route::get('getorm', function () {
     echo "<pre>";
     print_r($users->toArray());
     echo "</pre>";
-
-    echo 1;
 });
 
 
