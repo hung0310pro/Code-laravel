@@ -15,11 +15,11 @@ use Illuminate\Http\Request;
 */
 
 Route::get('/', function () {
-	return view('welcome');
+    return view('welcome');
 });
 
 Route::get('test', function () {
-	return 'hello';
+    return 'hello';
 });
 
 Auth::routes();
@@ -29,7 +29,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 // đây là chỗ của vue api (listuserapi.blade.php,ListUserApiComponent.vue,ListUserApiController.php,app.js(vue))
 Route::resource('listuserapi', 'ListUserApiController');
 Route::get('/listuserapipage', function () {
-	return view('vue/listuserapi');
+    return view('vue/listuserapi');
 });
 // end vue
 
@@ -42,20 +42,22 @@ Route::get('/testauthorizationpolicies/{id}', 'authorizationController@show');
 //++++ test (table comment,users)
 // subquery(1 user có nhiều cmt) get all user trong bảng users sao cho lấy ra được comment mới nhất
 Route::get('getorm', function () {
-	$lastComment = App\Comment::select('comment')
-		->whereColumn('id_users', '=', 'users.id')
-		->latest()
-		->limit(1)
-		->getQuery();
+    $lastComment = App\Comment::select('comment')
+        ->whereColumn('id_users', '=', 'users.id')
+        ->latest()
+        ->limit(1)
+        ->getQuery();
 
-	$users = App\User::select('users.*')
-		->selectSub($lastComment, 'last_commet')
-		->get();
+    $users = App\User::select('users.*')
+        ->selectSub($lastComment, 'last_commet')
+        ->get();
 
 
-	echo "<pre>";
-	print_r($users->toArray());
-	echo "</pre>";
+    echo "<pre>";
+    print_r($users->toArray());
+    echo "</pre>";
+
+    echo 1;
 });
 
 
@@ -130,8 +132,8 @@ Route::group([
     Route::post('signup', 'AuthController@signup');
 
     Route::group([
-      'middleware' => 'auth:api'
-    ], function() {
+        'middleware' => 'auth:api'
+    ], function () {
         Route::get('logout', 'AuthController@logout');
         Route::get('user', 'AuthController@user');
     });
