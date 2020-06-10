@@ -61,6 +61,7 @@
                                     <a class="btn btn-link" href="{{ route('password.request') }}">
                                         {{ __('Forgot Your Password?') }}
                                     </a>
+                                    <a href="{{ URL::to('auth/facebook') }}">Facebook Login</a>
                                 @endif
                             </div>
                         </div>

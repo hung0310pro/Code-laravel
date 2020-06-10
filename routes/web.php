@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redis;
 
 /*
 |--------------------------------------------------------------------------
@@ -145,3 +146,25 @@ Route::post('/message/send', ['uses' => 'EmailController@sendEMail', 'as' => 'fr
 // (.evn, config\mail.php, EmailController.php,App\Mail\SendMailRegisteredUser)
 // https://allaravel.com/blog/xu-ly-thu-dien-tu-voi-laravel-mail/
 Route::get('/mail', 'EmailController@sendEMail');
+
+Route::get('/redis', 'HomeController@getData');
+Route::get('/redis1', 'HomeController@setData');
+
+
+
+Route::get('/publish', function () {
+    // Route logic...
+
+    Redis::publish('test-channel', json_encode(['foo' => 'bar']));
+});
+
+// laravel-scout
+Route::get('indexscout', 'PostController@search');
+
+// đăng nhập facebook
+Route::get('/auth/facebook', 'SocialAuthController@redirectToProvider');
+Route::get('/auth/facebook/callback', 'SocialAuthController@handleProviderCallback');
+
+// add recaptcha
+Route::get('captcha-form', 'CaptchaController@captchaForm');
+Route::post('store-captcha-form', 'CaptchaController@storeCaptchaForm');

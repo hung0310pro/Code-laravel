@@ -92,7 +92,6 @@ class ListUserApiController extends Controller
 			'email' => 'required|min:10'
 		]);
 
-
 		$user = User::findOrFail($id);
 		$user->name = $request->name;
 		$user->email = $request->email;
