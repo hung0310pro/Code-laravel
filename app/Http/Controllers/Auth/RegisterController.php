@@ -85,6 +85,14 @@ class RegisterController extends Controller
 
 		$this->guard()->login($user);
 
+		// tối ưu ảnh vs Tinify
+        $source = \Tinify\fromUrl("https://img.thuthuatphanmem.vn/uploads/2018/10/24/beautiful-city-wallpaper_102641859.jpg");
+        $zoomouted = $source->resize(array(
+            "method" => "scale",
+            "width" => 250
+        ));
+        $zoomouted ->toFile("zoomoutedImage.jpg");
+
 		if ($response = $this->registered($request, $user)) {
 			return $response;
 		}

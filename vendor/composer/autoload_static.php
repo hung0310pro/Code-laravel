@@ -50,6 +50,8 @@ class ComposerStaticInitadebeb4c0313db8c8252b7ef9ce4499f
         'decc78cc4436b1292c6c0d151b19445c' => __DIR__ . '/..' . '/phpseclib/phpseclib/phpseclib/bootstrap.php',
         '4a1f389d6ce373bda9e57857d3b61c84' => __DIR__ . '/..' . '/barryvdh/laravel-debugbar/src/helpers.php',
         'f18cc91337d49233e5754e93f3ed9ec3' => __DIR__ . '/..' . '/laravelcollective/html/src/helpers.php',
+        '74ed299072414d276bb7568fe71d5b0c' => __DIR__ . '/..' . '/tinify/tinify/lib/Tinify.php',
+        '9635627915aaea7a98d6d14d04ca5b56' => __DIR__ . '/..' . '/tinify/tinify/lib/Tinify/Exception.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -74,6 +76,7 @@ class ComposerStaticInitadebeb4c0313db8c8252b7ef9ce4499f
         ),
         'T' => 
         array (
+            'Tinify\\' => 7,
             'TijsVerkoyen\\CssToInlineStyles\\' => 31,
             'Tests\\' => 6,
         ),
@@ -239,6 +242,10 @@ class ComposerStaticInitadebeb4c0313db8c8252b7ef9ce4499f
         'Webmozart\\Assert\\' => 
         array (
             0 => __DIR__ . '/..' . '/webmozart/assert/src',
+        ),
+        'Tinify\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/tinify/tinify/lib/Tinify',
         ),
         'TijsVerkoyen\\CssToInlineStyles\\' => 
         array (
@@ -702,6 +709,7 @@ class ComposerStaticInitadebeb4c0313db8c8252b7ef9ce4499f
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
         'App\\Providers\\EventServiceProvider' => __DIR__ . '/../..' . '/app/Providers/EventServiceProvider.php',
         'App\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
+        'App\\Rules\\ValidRecaptcha' => __DIR__ . '/../..' . '/app/Rules/ValidRecaptcha.php',
         'App\\Services\\SocialAccountService' => __DIR__ . '/../..' . '/app/Services/SocialAccountService.php',
         'App\\SocialAccount' => __DIR__ . '/../..' . '/app/SocialAccount.php',
         'App\\User' => __DIR__ . '/../..' . '/app/User.php',
@@ -5516,6 +5524,15 @@ class ComposerStaticInitadebeb4c0313db8c8252b7ef9ce4499f
         'TijsVerkoyen\\CssToInlineStyles\\Css\\Property\\Property' => __DIR__ . '/..' . '/tijsverkoyen/css-to-inline-styles/src/Css/Property/Property.php',
         'TijsVerkoyen\\CssToInlineStyles\\Css\\Rule\\Processor' => __DIR__ . '/..' . '/tijsverkoyen/css-to-inline-styles/src/Css/Rule/Processor.php',
         'TijsVerkoyen\\CssToInlineStyles\\Css\\Rule\\Rule' => __DIR__ . '/..' . '/tijsverkoyen/css-to-inline-styles/src/Css/Rule/Rule.php',
+        'Tinify\\AccountException' => __DIR__ . '/..' . '/tinify/tinify/lib/Tinify/Exception.php',
+        'Tinify\\Client' => __DIR__ . '/..' . '/tinify/tinify/lib/Tinify/Client.php',
+        'Tinify\\ClientException' => __DIR__ . '/..' . '/tinify/tinify/lib/Tinify/Exception.php',
+        'Tinify\\ConnectionException' => __DIR__ . '/..' . '/tinify/tinify/lib/Tinify/Exception.php',
+        'Tinify\\Exception' => __DIR__ . '/..' . '/tinify/tinify/lib/Tinify/Exception.php',
+        'Tinify\\Result' => __DIR__ . '/..' . '/tinify/tinify/lib/Tinify/Result.php',
+        'Tinify\\ResultMeta' => __DIR__ . '/..' . '/tinify/tinify/lib/Tinify/ResultMeta.php',
+        'Tinify\\ServerException' => __DIR__ . '/..' . '/tinify/tinify/lib/Tinify/Exception.php',
+        'Tinify\\Source' => __DIR__ . '/..' . '/tinify/tinify/lib/Tinify/Source.php',
         'Webmozart\\Assert\\Assert' => __DIR__ . '/..' . '/webmozart/assert/src/Assert.php',
         'Whoops\\Exception\\ErrorException' => __DIR__ . '/..' . '/filp/whoops/src/Whoops/Exception/ErrorException.php',
         'Whoops\\Exception\\Formatter' => __DIR__ . '/..' . '/filp/whoops/src/Whoops/Exception/Formatter.php',

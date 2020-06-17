@@ -168,3 +168,9 @@ Route::get('/auth/facebook/callback', 'SocialAuthController@handleProviderCallba
 // add recaptcha
 Route::get('captcha-form', 'CaptchaController@captchaForm');
 Route::post('store-captcha-form', 'CaptchaController@storeCaptchaForm');
+
+
+// use vuejs vs module (app.js,store.js,childA.js,childB.js,ChildB.vue,ChildA.vue,Parent.vue)
+Route::get('/modulevuepage', function () {
+    return view('vue/modulevuepage');
+});

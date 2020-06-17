@@ -72,7 +72,7 @@
             // tạo tài khoản, sau khi tạo tài khoảng mới thì phải nhét cái tài khoản đó vào trong mảng của vuejs để vẽ ra tiếp.
             createUser(e) {
                 this.errors = [];
-                axios.post('/blog/public/listuserapi', {name: this.name, email: this.email, password: this.password})
+                axios.post('/Code/Code-laravel/public/listuserapi', {name: this.name, email: this.email, password: this.password})
                     .then(response => {
                         this.list_users.push({...response.data.user, 'isUpdate': false}); // es6
                     })
@@ -84,7 +84,7 @@
 
             // call ajax lấy dữ liệu xong sau đó đổ dữ liệu vào mảng được khai bảo trong vuejs để in ra dữ liệu
             getListUsers() {
-                axios.get('/blog/public/listuserapi')
+                axios.get('/Code/Code-laravel/public/listuserapi')
                     .then(response => {
                         this.list_users = response.data;
                         this.list_users.forEach(item => {
@@ -104,7 +104,7 @@
             // sau khi chỉnh sửa xong thì update lại dữ liệu cho cái mảng ở vuejs đồng thời cho cái isUpdate là false để lại là table bt
             updateUser(e, id,index) {
                 this.errors = [];
-                let url = '/blog/public/listuserapi/' + id;
+                let url = '/Code/Code-laravel/public/listuserapi/' + id;
                 axios.put(url, {name: this.updatename, email: this.updateemail})
                     .then(response => {
                        this.list_users[index].name = this.updatename;

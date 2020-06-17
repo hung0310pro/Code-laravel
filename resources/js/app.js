@@ -3,7 +3,8 @@
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
-
+import Vuex from "vuex";
+import store from './store';
 require('./bootstrap');
 
 window.Vue = require('vue');
@@ -19,8 +20,11 @@ window.Vue = require('vue');
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
+
+
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('list-component', require('./components/ListUserApiComponent.vue').default);
+Vue.component('module-components', require('./components/modulecomponents/Parent.vue').default);
 
 
 // oauth-2
@@ -47,4 +51,8 @@ Vue.component(
 
 const app = new Vue({
     el: '#app',
+    store,
 });
+
+export default app;
+

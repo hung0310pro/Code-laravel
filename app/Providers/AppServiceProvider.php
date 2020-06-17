@@ -23,6 +23,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        \Tinify\setKey("94B7stcM86zMYLwJxj5tYdvh7gLxln8F");
         \Illuminate\Support\Facades\Schema::defaultStringLength(191);
     }
 }
